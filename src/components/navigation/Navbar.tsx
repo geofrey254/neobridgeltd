@@ -41,7 +41,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 py-2 border-b-2 border-cyan-900 ${
+      className={`fixed w-full z-50 transition-all duration-300 py-2 border-b-2 border-[#041740] ${
         scrolled ? 'bg-white shadow-md' : 'bg-white bg-opacity-95'
       }`}
     >
@@ -50,7 +50,7 @@ const Navbar = () => {
           {/* Logo and Brand */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center">
-              <Image src="/black.png" alt="Logo" width={120} height={120} className="mr-2" />
+              <Image src="/logolight.png" alt="Logo" width={120} height={120} className="mr-2" />
             </Link>
           </div>
 
@@ -58,7 +58,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-6">
             <Link
               href="/"
-              className="text-cyan-900 hover:text-slate-900 flex items-center space-x-1"
+              className="text-[#041740] hover:text-slate-900 flex items-center space-x-1"
             >
               <Home size={18} />
               <span>Home</span>
@@ -66,7 +66,7 @@ const Navbar = () => {
 
             <Link
               href="/about-us"
-              className="text-cyan-900 hover:text-slate-900 flex items-center space-x-1"
+              className="text-[#041740] hover:text-slate-900 flex items-center space-x-1"
             >
               <Info size={18} />
               <span>About Us</span>
@@ -74,7 +74,7 @@ const Navbar = () => {
 
             <Link
               href="/our-solutions"
-              className="text-cyan-900 hover:text-slate-900 flex items-center space-x-1"
+              className="text-[#041740] hover:text-slate-900 flex items-center space-x-1"
             >
               <Puzzle size={18} />
               <span>Solutions</span>
@@ -82,7 +82,7 @@ const Navbar = () => {
 
             <Link
               href="/contact-us"
-              className="bg-cyan-900 text-white px-4 py-2 rounded-md hover:bg-opacity-90 transition-all"
+              className="bg-[#041740] text-white px-4 py-2 rounded-md hover:bg-opacity-90 transition-all"
             >
               Contact Us
             </Link>
@@ -92,7 +92,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={toggleMenu}
-              className="text-cyan-900 hover:text-slate-900 focus:outline-none"
+              className="text-[#041740] hover:text-slate-900 focus:outline-none"
               aria-label="Toggle menu"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -107,7 +107,7 @@ const Navbar = () => {
           <div className="px-4 pt-2 pb-4 space-y-2">
             <Link
               href="/"
-              className="text-cyan-900 hover:bg-gray-100 px-3 py-3 rounded-md text-base font-medium flex items-center"
+              className="text-[#041740] hover:bg-gray-100 px-3 py-3 rounded-md text-base font-medium flex items-center"
               onClick={() => setIsOpen(false)}
             >
               <Home size={18} className="mr-3" />
@@ -116,7 +116,7 @@ const Navbar = () => {
 
             <Link
               href="/about-us"
-              className="text-cyan-900 hover:bg-gray-100 px-3 py-3 rounded-md text-base font-medium flex items-center"
+              className="text-[#041740] hover:bg-gray-100 px-3 py-3 rounded-md text-base font-medium flex items-center"
               onClick={() => setIsOpen(false)}
             >
               <Info size={18} className="mr-3" />
@@ -125,7 +125,7 @@ const Navbar = () => {
 
             <Link
               href="/our-solutions"
-              className="text-cyan-900 hover:bg-gray-100 px-3 py-3 rounded-md text-base font-medium flex items-center"
+              className="text-[#041740] hover:bg-gray-100 px-3 py-3 rounded-md text-base font-medium flex items-center"
               onClick={() => setIsOpen(false)}
             >
               <Puzzle size={18} className="mr-3" />
@@ -136,7 +136,7 @@ const Navbar = () => {
             <div className="relative">
               <button
                 onClick={toggleMobileInsights}
-                className="w-full text-cyan-900 hover:bg-gray-100 px-3 py-3 rounded-md text-base font-medium flex items-center justify-between"
+                className="w-full text-[#041740] hover:bg-gray-100 px-3 py-3 rounded-md text-base font-medium flex items-center justify-between"
               >
                 <div className="flex items-center">
                   <Activity size={18} className="mr-3" />
@@ -146,10 +146,10 @@ const Navbar = () => {
               </button>
 
               {mobileInsightsOpen && (
-                <div className="bg-gray-50 rounded-md mt-1 ml-6 border-l-2 border-cyan-900">
+                <div className="bg-gray-50 rounded-md mt-1 ml-6 border-l-2 border-[#041740]">
                   <Link
                     href="/insights/resources"
-                    className="text-cyan-900 hover:bg-gray-100 px-4 py-3 rounded-md text-base flex items-center"
+                    className="text-[#041740] hover:bg-gray-100 px-4 py-3 rounded-md text-base flex items-center"
                     onClick={() => setIsOpen(false)}
                   >
                     <Activity size={16} className="mr-3" />
@@ -158,7 +158,7 @@ const Navbar = () => {
 
                   <Link
                     href="/insights/case-studies"
-                    className="text-cyan-900 hover:bg-gray-100 px-4 py-3 rounded-md text-base flex items-center"
+                    className="text-[#041740] hover:bg-gray-100 px-4 py-3 rounded-md text-base flex items-center"
                     onClick={() => setIsOpen(false)}
                   >
                     <BookCopy size={16} className="mr-3" />
@@ -167,7 +167,7 @@ const Navbar = () => {
 
                   <Link
                     href="/blog"
-                    className="text-cyan-900 hover:bg-gray-100 px-4 py-3 rounded-md text-base flex items-center"
+                    className="text-[#041740] hover:bg-gray-100 px-4 py-3 rounded-md text-base flex items-center"
                     onClick={() => setIsOpen(false)}
                   >
                     <PenLine size={16} className="mr-3" />

@@ -91,8 +91,8 @@ export default function PaginationComponent({
               aria-disabled={currentPage === 1}
               tabIndex={currentPage === 1 ? -1 : 0}
               onClick={(e) => currentPage === 1 && e.preventDefault()}
-              className={`border border-gray-200 rounded-lg hover:border-cyan-900 hover:text-cyan-900 transition-colors duration-200 ${
-                currentPage === 1 ? 'pointer-events-none opacity-50' : 'hover:bg-cyan-900/5'
+              className={`border border-gray-200 rounded-lg hover:border-[#041740] hover:text-[#041740] transition-colors duration-200 ${
+                currentPage === 1 ? 'pointer-events-none opacity-50' : 'hover:bg-[#041740]/5'
               }`}
             />
           </PaginationItem>
@@ -114,8 +114,8 @@ export default function PaginationComponent({
                   isActive={currentPage === pageNumber}
                   className={`w-10 h-10 flex items-center justify-center rounded-lg font-medium transition-colors duration-200 ${
                     currentPage === pageNumber
-                      ? 'bg-cyan-900 text-white hover:bg-[#0d4175] border-0'
-                      : 'text-gray-700 border border-gray-200 hover:border-cyan-900 hover:text-cyan-900 hover:bg-cyan-900/5'
+                      ? 'bg-[#041740] text-white hover:bg-[#0d4175] border-0'
+                      : 'text-gray-700 border border-gray-200 hover:border-[#041740] hover:text-[#041740] hover:bg-[#041740]/5'
                   }`}
                 >
                   {pageNumber}
@@ -130,8 +130,10 @@ export default function PaginationComponent({
               aria-disabled={currentPage >= totalPages}
               tabIndex={currentPage >= totalPages ? -1 : 0}
               onClick={(e) => currentPage >= totalPages && e.preventDefault()}
-              className={`border border-gray-200 rounded-lg hover:border-cyan-900 hover:text-cyan-900 transition-colors duration-200 ${
-                currentPage >= totalPages ? 'pointer-events-none opacity-50' : 'hover:bg-cyan-900/5'
+              className={`border border-gray-200 rounded-lg hover:border-[#041740] hover:text-[#041740] transition-colors duration-200 ${
+                currentPage >= totalPages
+                  ? 'pointer-events-none opacity-50'
+                  : 'hover:bg-[#041740]/5'
               }`}
             />
           </PaginationItem>

@@ -1,23 +1,55 @@
-import { headers as getHeaders } from 'next/headers.js'
-import Image from 'next/image'
 import { getPayload } from 'payload'
 import React from 'react'
-import { fileURLToPath } from 'url'
+import HeroBlock from '@/components/homepage/HeroBlock'
+import LogosSection from '@/components/homepage/LogosSection'
+import HeroAboutSection from '@/components/homepage/HeroAbout'
+import HomeServicesSection from '@/components/homepage/ServicesSection'
+import WhyBlock from '@/components/homepage/WhyBlock'
+import CTABlock from '@/components/homepage/CTABlock'
 
 import config from '@/payload.config'
 import './styles.css'
 
 export default async function HomePage() {
-  const headers = await getHeaders()
   const payloadConfig = await config
   const payload = await getPayload({ config: payloadConfig })
-  const { user } = await payload.auth({ headers })
+  const {
+    docs: [page],
+  } = await payload.find({
+    collection: 'pages',
+    where: {
+      slug: { equals: 'home-page' },
+    },
+  })
 
-  const fileURL = `vscode://file/${fileURLToPath(import.meta.url)}`
+  if (!page) {
+    return <div>Page not found</div>
+  }
 
+  // Render the page layout dynamically
   return (
-    <div className="home">
-      <h1>Hello world</h1>
+    <div>
+      <div className="page">{page.layout?.map((block, index) => renderBlock(block, index))}</div>
     </div>
   )
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function renderBlock(block: any, index: number) {
+  switch (block.blockType) {
+    case 'hero':
+      return <HeroBlock key={index} block={block} />
+    case 'logos-section':
+      return <LogosSection key={index} block={block} />
+    case 'hero-about':
+      return <HeroAboutSection key={index} block={block} />
+    case 'services-block':
+      return <HomeServicesSection key={index} block={block} />
+    case 'why-choose-us':
+      return <WhyBlock key={index} block={block} />
+    case 'cta-section':
+      return <CTABlock key={index} block={block} />
+    default:
+      return null
+  }
 }

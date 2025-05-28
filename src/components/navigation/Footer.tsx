@@ -52,9 +52,9 @@ const Footer = () => {
   }
 
   return (
-    <footer className="relative bg-cyan-900 text-white">
+    <footer className="relative bg-[#041740] text-white">
       {/* Decorative top border */}
-      <div className="h-2 bg-gradient-to-r from-[#FF5C93] via-[#2949FF] to-[#FFE25A]"></div>
+      <div className="h-2 bg-gradient-to-r from-[#FF5C93] via-[#2949FF] to-[#DF0C0C]"></div>
 
       {/* Wave separator */}
       <div className="absolute top-0 left-0 w-full overflow-hidden">
@@ -78,7 +78,7 @@ const Footer = () => {
           <div className="relative z-10">
             <div className="flex items-center mb-6">
               <Image
-                src="/white.png"
+                src="/dark.png"
                 alt="Logo"
                 width={140}
                 height={140}
@@ -90,16 +90,16 @@ const Footer = () => {
             </p>
             <div className="space-y-4">
               <div className="flex items-center group">
-                <div className="bg-[#FF5C93] bg-opacity-20 p-2.5 rounded-full mr-4 group-hover:bg-opacity-30 transition-all">
-                  <Phone className="h-5 w-5 text-[#FF5C93]" />
+                <div className="bg-[#df0c0c] bg-opacity-20 p-2.5 rounded-full mr-4 group-hover:bg-opacity-30 transition-all">
+                  <Phone className="h-5 w-5 text-white" />
                 </div>
                 <p className="text-gray-300 group-hover:text-white transition-colors">
                   +254 720 206088
                 </p>
               </div>
               <div className="flex items-center group">
-                <div className="bg-[#2949FF] bg-opacity-20 p-2.5 rounded-full mr-4 group-hover:bg-opacity-30 transition-all">
-                  <Mail className="h-5 w-5 text-[#2949FF]" />
+                <div className="bg-[#df0c0c] bg-opacity-20 p-2.5 rounded-full mr-4 group-hover:bg-opacity-30 transition-all">
+                  <Mail className="h-5 w-5 text-white" />
                 </div>
                 <p className="text-gray-300 group-hover:text-white transition-colors">
                   info@vividanalytics.com
@@ -112,7 +112,7 @@ const Footer = () => {
           <div className="relative z-10">
             <h3 className="text-2xl font-bold mb-8 relative inline-block">
               Quick Links
-              <span className="bg-[#FFE25A] w-12 h-1 absolute -bottom-3 left-0 rounded-full"></span>
+              <span className="bg-[#DF0C0C] w-12 h-1 absolute -bottom-3 left-0 rounded-full"></span>
             </h3>
             <ul className="grid grid-cols-2 gap-4 mt-2">
               {[
@@ -124,12 +124,12 @@ const Footer = () => {
                 <li key={index}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-[#FFE25A] flex items-center group transition-all duration-300"
+                    className="text-gray-300 hover:text-[#DF0C0C] flex items-center group transition-all duration-300"
                   >
-                    <div className="bg-[#FFE25A] bg-opacity-0 group-hover:bg-opacity-20 p-1 rounded-full mr-3 transition-all duration-300">
-                      <ArrowRight className="h-4 w-4 text-[#FFE25A] transform group-hover:translate-x-1 transition-transform duration-300" />
+                    <div className="bg-[#DF0C0C] bg-opacity-0 group-hover:bg-opacity-20 p-1 rounded-full mr-3 transition-all duration-300">
+                      <ArrowRight className="h-4 w-4 text-[#DF0C0C] transform group-hover:translate-x-1 transition-transform duration-300" />
                     </div>
-                    <span className="border-b border-transparent group-hover:border-[#FFE25A] pb-1 transition-all">
+                    <span className="border-b border-transparent group-hover:border-[#DF0C0C] pb-1 transition-all">
                       {link.label}
                     </span>
                   </Link>
@@ -159,7 +159,7 @@ const Footer = () => {
                 />
                 <button
                   type="submit"
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-[#FF5C93] text-white p-2.5 rounded-md hover:bg-opacity-90 transition-all focus:outline-none focus:ring-2 focus:ring-white"
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-[#041740] text-white p-2.5 rounded-md hover:bg-opacity-90 transition-all focus:outline-none focus:ring-2 focus:ring-white cursor-pointer"
                   aria-label="Subscribe"
                 >
                   <Send className="h-5 w-5" />
@@ -177,8 +177,8 @@ const Footer = () => {
 
               {/* Already subscribed notification */}
               {alreadySubscribed && (
-                <div className="mt-4 px-4 py-3 bg-[#FFE25A] bg-opacity-20 rounded-md border-l-4 border-[#FFE25A] animate-fade-in flex items-start">
-                  <AlertCircle className="h-5 w-5 text-[#FFE25A] mr-2 flex-shrink-0 mt-0.5" />
+                <div className="mt-4 px-4 py-3 bg-[#DF0C0C] bg-opacity-20 rounded-md border-l-4 border-[#DF0C0C] animate-fade-in flex items-start">
+                  <AlertCircle className="h-5 w-5 text-[#DF0C0C] mr-2 flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="text-white text-sm font-medium">Already Subscribed</p>
                     <p className="text-white/80 text-sm">
@@ -195,7 +195,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-white border-opacity-10 flex justify-center items-center">
           <p className="text-white/80 mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} Vivid Analytics. All rights reserved.
+            &copy; {new Date().getFullYear()} Neobridge. All rights reserved.
           </p>
         </div>
       </div>
@@ -203,28 +203,11 @@ const Footer = () => {
       {/* Back to top button */}
       <button
         onClick={scrollToTop}
-        className="bg-[#FFE25A] text-black p-3 rounded-full shadow-lg absolute -top-6 right-8 hover:bg-white hover:text-black transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white"
+        className="bg-[#DF0C0C] text-black p-3 rounded-full shadow-lg absolute -top-6 right-8 hover:bg-white hover:text-black transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white"
         aria-label="Back to top"
       >
         <ChevronUp className="h-6 w-6" />
       </button>
-
-      {/* Add some keyframe animations for the notifications */}
-      <style jsx global>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(-10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fade-in {
-          animation: fadeIn 0.3s ease-out forwards;
-        }
-      `}</style>
     </footer>
   )
 }

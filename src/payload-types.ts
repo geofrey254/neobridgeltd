@@ -69,6 +69,14 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
+    blog: Blog;
+    pages: Page;
+    'our-solutions': OurSolution;
+    'practice-areas': PracticeArea;
+    team: Team;
+    newsletter: Newsletter;
+    casestudies: Casestudy;
+    resources: Resource;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -77,6 +85,14 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
+    blog: BlogSelect<false> | BlogSelect<true>;
+    pages: PagesSelect<false> | PagesSelect<true>;
+    'our-solutions': OurSolutionsSelect<false> | OurSolutionsSelect<true>;
+    'practice-areas': PracticeAreasSelect<false> | PracticeAreasSelect<true>;
+    team: TeamSelect<false> | TeamSelect<true>;
+    newsletter: NewsletterSelect<false> | NewsletterSelect<true>;
+    casestudies: CasestudiesSelect<false> | CasestudiesSelect<true>;
+    resources: ResourcesSelect<false> | ResourcesSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -137,6 +153,7 @@ export interface User {
 export interface Media {
   id: number;
   alt: string;
+  prefix?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -148,6 +165,277 @@ export interface Media {
   height?: number | null;
   focalX?: number | null;
   focalY?: number | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "blog".
+ */
+export interface Blog {
+  id: number;
+  title: string;
+  slug: string;
+  coverImage?: (number | null) | Media;
+  content: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "pages".
+ */
+export interface Page {
+  id: number;
+  title: string;
+  slug: string;
+  layout?:
+    | (
+        | {
+            heading: string;
+            subheading: string;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'hero';
+          }
+        | {
+            company_logos?:
+              | {
+                  logo: number | Media;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'logos-section';
+          }
+        | {
+            heading: string;
+            description: string;
+            experience: number;
+            clients: number;
+            about_photo: number | Media;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'hero-about';
+          }
+        | {
+            heading: string;
+            solutions?: (number | OurSolution)[] | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'services-block';
+          }
+        | {
+            heading: string;
+            description: string;
+            listings?:
+              | {
+                  title: string;
+                  content: string;
+                  id?: string | null;
+                }[]
+              | null;
+            experience: number;
+            clients: number;
+            why_us_photo: number | Media;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'why-choose-us';
+          }
+        | {
+            title: string;
+            description: string;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'cta-section';
+          }
+        | {
+            solutions?: (number | OurSolution)[] | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'solutionblock';
+          }
+        | {
+            heading: string;
+            description: string;
+            photo: number | Media;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'about';
+          }
+        | {
+            mission: string;
+            vision: string;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'goals';
+          }
+        | {
+            team_profiles?: (number | Team)[] | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'ourTeam';
+          }
+        | {
+            title: string;
+            description: string;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'contact';
+          }
+        | {
+            socials?:
+              | {
+                  linkedin?: string | null;
+                  facebook?: string | null;
+                  twitter?: string | null;
+                  tiktok?: string | null;
+                  instagram?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            phoneNumbers?:
+              | {
+                  phone: string;
+                  id?: string | null;
+                }[]
+              | null;
+            emailAdd?:
+              | {
+                  email: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'contactAddresses';
+          }
+        | {
+            iframe: string;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'location';
+          }
+      )[]
+    | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Add Solution
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "our-solutions".
+ */
+export interface OurSolution {
+  id: number;
+  title: string;
+  description: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Add Team Member
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "team".
+ */
+export interface Team {
+  id: number;
+  name: string;
+  slug: string;
+  photo: number | Media;
+  role: string;
+  email: string;
+  phone: string;
+  linkedin?: string | null;
+  twitter?: string | null;
+  facebook?: string | null;
+  instagram?: string | null;
+  bio: string;
+  experience: number;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Add Practice Area
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "practice-areas".
+ */
+export interface PracticeArea {
+  id: number;
+  title: string;
+  slug: string;
+  description: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "newsletter".
+ */
+export interface Newsletter {
+  id: number;
+  email: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "casestudies".
+ */
+export interface Casestudy {
+  id: number;
+  title: string;
+  slug: string;
+  coverImage?: (number | null) | Media;
+  content: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "resources".
+ */
+export interface Resource {
+  id: number;
+  title: string;
+  slug: string;
+  description: string;
+  document: number | Media;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -163,6 +451,38 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'media';
         value: number | Media;
+      } | null)
+    | ({
+        relationTo: 'blog';
+        value: number | Blog;
+      } | null)
+    | ({
+        relationTo: 'pages';
+        value: number | Page;
+      } | null)
+    | ({
+        relationTo: 'our-solutions';
+        value: number | OurSolution;
+      } | null)
+    | ({
+        relationTo: 'practice-areas';
+        value: number | PracticeArea;
+      } | null)
+    | ({
+        relationTo: 'team';
+        value: number | Team;
+      } | null)
+    | ({
+        relationTo: 'newsletter';
+        value: number | Newsletter;
+      } | null)
+    | ({
+        relationTo: 'casestudies';
+        value: number | Casestudy;
+      } | null)
+    | ({
+        relationTo: 'resources';
+        value: number | Resource;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -227,6 +547,7 @@ export interface UsersSelect<T extends boolean = true> {
  */
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
+  prefix?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -238,6 +559,248 @@ export interface MediaSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "blog_select".
+ */
+export interface BlogSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  coverImage?: T;
+  content?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "pages_select".
+ */
+export interface PagesSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  layout?:
+    | T
+    | {
+        hero?:
+          | T
+          | {
+              heading?: T;
+              subheading?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'logos-section'?:
+          | T
+          | {
+              company_logos?:
+                | T
+                | {
+                    logo?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'hero-about'?:
+          | T
+          | {
+              heading?: T;
+              description?: T;
+              experience?: T;
+              clients?: T;
+              about_photo?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'services-block'?:
+          | T
+          | {
+              heading?: T;
+              solutions?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'why-choose-us'?:
+          | T
+          | {
+              heading?: T;
+              description?: T;
+              listings?:
+                | T
+                | {
+                    title?: T;
+                    content?: T;
+                    id?: T;
+                  };
+              experience?: T;
+              clients?: T;
+              why_us_photo?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'cta-section'?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              id?: T;
+              blockName?: T;
+            };
+        solutionblock?:
+          | T
+          | {
+              solutions?: T;
+              id?: T;
+              blockName?: T;
+            };
+        about?:
+          | T
+          | {
+              heading?: T;
+              description?: T;
+              photo?: T;
+              id?: T;
+              blockName?: T;
+            };
+        goals?:
+          | T
+          | {
+              mission?: T;
+              vision?: T;
+              id?: T;
+              blockName?: T;
+            };
+        ourTeam?:
+          | T
+          | {
+              team_profiles?: T;
+              id?: T;
+              blockName?: T;
+            };
+        contact?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              id?: T;
+              blockName?: T;
+            };
+        contactAddresses?:
+          | T
+          | {
+              socials?:
+                | T
+                | {
+                    linkedin?: T;
+                    facebook?: T;
+                    twitter?: T;
+                    tiktok?: T;
+                    instagram?: T;
+                    id?: T;
+                  };
+              phoneNumbers?:
+                | T
+                | {
+                    phone?: T;
+                    id?: T;
+                  };
+              emailAdd?:
+                | T
+                | {
+                    email?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        location?:
+          | T
+          | {
+              iframe?: T;
+              id?: T;
+              blockName?: T;
+            };
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "our-solutions_select".
+ */
+export interface OurSolutionsSelect<T extends boolean = true> {
+  title?: T;
+  description?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "practice-areas_select".
+ */
+export interface PracticeAreasSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  description?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "team_select".
+ */
+export interface TeamSelect<T extends boolean = true> {
+  name?: T;
+  slug?: T;
+  photo?: T;
+  role?: T;
+  email?: T;
+  phone?: T;
+  linkedin?: T;
+  twitter?: T;
+  facebook?: T;
+  instagram?: T;
+  bio?: T;
+  experience?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "newsletter_select".
+ */
+export interface NewsletterSelect<T extends boolean = true> {
+  email?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "casestudies_select".
+ */
+export interface CasestudiesSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  coverImage?: T;
+  content?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "resources_select".
+ */
+export interface ResourcesSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  description?: T;
+  document?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
