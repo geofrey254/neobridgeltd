@@ -145,7 +145,7 @@ export default function HeroBlock({ block }: HeroBlockProps) {
                 visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
               }}
             >
-              <p className="text-lg mb-8 text-white/70 max-w-2xl leading-relaxed">{subheading}</p>
+              <p className="text-base md:text-lg mb-8 text-white/70 max-w-2xl">{subheading}</p>
             </motion.div>
 
             <motion.div

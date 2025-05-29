@@ -56,7 +56,7 @@ export default function AboutSection({ block }: AboutProps) {
               <div className="h-1 w-16 bg-[#df0c0c] mb-8"></div>
 
               <div className="space-y-6 text-gray-600">
-                <p className="text-lg leading-relaxed text-justify">{description}</p>
+                <p className="md:text-lg md:text-justify">{description}</p>
               </div>
             </div>
           </div>

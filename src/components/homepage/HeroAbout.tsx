@@ -180,10 +180,10 @@ export default function HeroAboutSection({ block }: AboutUsBlockProps) {
 
               {/* Description */}
               <motion.div
-                className="text-[#041740]/70 space-y-6 mb-10 text-lg leading-relaxed"
+                className="text-[#041740]/70 space-y-6 mb-10 text-base md:text-lg"
                 variants={fadeInUp}
               >
-                <p className="text-justify">{description}</p>
+                <p className="md:text-justify">{description}</p>
               </motion.div>
 
               {/* Stats Cards */}
