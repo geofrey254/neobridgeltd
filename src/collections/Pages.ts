@@ -3,6 +3,7 @@ import { HeroAbout } from '@/blocks/homepage/home-about/schema'
 import { ServicesBlock } from '@/blocks/homepage/services/schema'
 import { WhyChooseUs } from '@/blocks/homepage/why-us/schema'
 import { CTA } from '@/blocks/homepage/cta/schema'
+import { ModularServices } from '@/blocks/modularservices/schema'
 import { OurSolutions } from '@/blocks/solutions/schema'
 import { About, Goals, OurTeam } from '@/blocks/about/schema'
 import { Contact, ContactAddresses, Map } from '@/blocks/contactPage/schema'
@@ -39,6 +40,7 @@ export const Pages: CollectionConfig = {
         WhyChooseUs,
         CTA,
         OurSolutions,
+        ModularServices,
         About,
         Goals,
         OurTeam,

@@ -246,6 +246,12 @@ export interface Page {
             blockType: 'servicesblock';
           }
         | {
+            modularservices?: (number | Modularservice)[] | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'modularblock';
+          }
+        | {
             heading: string;
             description: string;
             photo: number | Media;
@@ -340,6 +346,20 @@ export interface Ourservice {
   createdAt: string;
 }
 /**
+ * Add Service
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "modularservices".
+ */
+export interface Modularservice {
+  id: number;
+  title: string;
+  slug: string;
+  description: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * Add Team Member
  *
  * This interface was referenced by `Config`'s JSON-Schema
@@ -359,20 +379,6 @@ export interface Team {
   instagram?: string | null;
   bio: string;
   experience: number;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * Add Service
- *
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "modularservices".
- */
-export interface Modularservice {
-  id: number;
-  title: string;
-  slug: string;
-  description: string;
   updatedAt: string;
   createdAt: string;
 }
@@ -572,6 +578,13 @@ export interface PagesSelect<T extends boolean = true> {
           | T
           | {
               services?: T;
+              id?: T;
+              blockName?: T;
+            };
+        modularblock?:
+          | T
+          | {
+              modularservices?: T;
               id?: T;
               blockName?: T;
             };

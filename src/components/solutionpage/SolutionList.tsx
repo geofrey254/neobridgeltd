@@ -3,7 +3,7 @@ import { ArrowUpRight, Target } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 
-interface SolutionsBlockProps {
+interface SolutionBlockProps {
   block: {
     services: {
       slug: string
@@ -14,7 +14,7 @@ interface SolutionsBlockProps {
   }
 }
 
-export default function SolutionList({ block }: SolutionsBlockProps) {
+export default function SolutionList({ block }: SolutionBlockProps) {
   const solutions = block?.services || []
 
   return (

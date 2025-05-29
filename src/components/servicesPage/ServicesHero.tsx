@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function SolutionHero() {
+export default function ServicesHero() {
   return (
     <section className="w-full bg-[#041740] relative overflow-hidden pt-24 flex justify-center items-center border-b-4 border-[#df0c0c] min-h-60 md:min-h-80">
       {/* Animated background elements */}
@@ -34,9 +34,9 @@ export default function SolutionHero() {
           {/* Main heading with animation */}
           <div className="relative mb-8">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
-              What We
+              Modular{' '}
               <span className="text-[#df0c0c] inline-block hover:scale-105 transition-transform duration-300">
-                Offer
+                Services
               </span>
             </h1>
 
