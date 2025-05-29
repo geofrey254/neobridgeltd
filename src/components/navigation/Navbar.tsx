@@ -3,24 +3,11 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import {
-  Menu,
-  X,
-  Home,
-  Puzzle,
-  Info,
-  PenLine,
-  Mail,
-  Activity,
-  BookCopy,
-  ChevronDown,
-  ChevronRight,
-} from 'lucide-react'
+import { Menu, X, Home, Users, Package, Settings, Mail } from 'lucide-react'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [mobileInsightsOpen, setMobileInsightsOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,10 +20,6 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
-  }
-
-  const toggleMobileInsights = () => {
-    setMobileInsightsOpen(!mobileInsightsOpen)
   }
 
   return (
@@ -119,71 +102,35 @@ const Navbar = () => {
             </Link>
 
             <Link
-              href="/about-us"
+              href="/who-we-are"
               className="text-[#041740] hover:bg-gray-100 px-3 py-3 rounded-md text-base font-medium flex items-center"
               onClick={() => setIsOpen(false)}
             >
-              <Info size={18} className="mr-3" />
-              About Us
+              <Users size={18} className="mr-3" />
+              Who We Are
             </Link>
 
             <Link
-              href="/our-solutions"
+              href="/what-we-offer"
               className="text-[#041740] hover:bg-gray-100 px-3 py-3 rounded-md text-base font-medium flex items-center"
               onClick={() => setIsOpen(false)}
             >
-              <Puzzle size={18} className="mr-3" />
-              Solutions
+              <Package size={18} className="mr-3" />
+              What We Offer
             </Link>
 
-            {/* Mobile insights dropdown */}
-            <div className="relative">
-              <button
-                onClick={toggleMobileInsights}
-                className="w-full text-[#041740] hover:bg-gray-100 px-3 py-3 rounded-md text-base font-medium flex items-center justify-between"
-              >
-                <div className="flex items-center">
-                  <Activity size={18} className="mr-3" />
-                  Insights
-                </div>
-                {mobileInsightsOpen ? <ChevronDown size={18} /> : <ChevronRight size={18} />}
-              </button>
-
-              {mobileInsightsOpen && (
-                <div className="bg-gray-50 rounded-md mt-1 font-medium ml-6 border-l-2 border-[#041740]">
-                  <Link
-                    href="/insights/resources"
-                    className="text-[#041740] hover:bg-gray-100 px-4 py-3 rounded-md text-base flex items-center"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <Activity size={16} className="mr-3" />
-                    Resources
-                  </Link>
-
-                  <Link
-                    href="/insights/case-studies"
-                    className="text-[#041740] hover:bg-gray-100 px-4 py-3 rounded-md text-base flex items-center"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <BookCopy size={16} className="mr-3" />
-                    Case Studies
-                  </Link>
-
-                  <Link
-                    href="/blog"
-                    className="text-[#041740] hover:bg-gray-100 px-4 py-3 rounded-md text-base flex items-center"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <PenLine size={16} className="mr-3" />
-                    Blog
-                  </Link>
-                </div>
-              )}
-            </div>
+            <Link
+              href="/modular-services"
+              className="text-[#041740] hover:bg-gray-100 px-3 py-3 rounded-md text-base font-medium flex items-center"
+              onClick={() => setIsOpen(false)}
+            >
+              <Settings size={18} className="mr-3" />
+              Modular Services
+            </Link>
 
             <Link
               href="/contact-us"
-              className="bg-slate-900 text-white flex items-center justify-center px-3 py-3 rounded-md text-base font-medium mt-4"
+              className="bg-[#041740] text-white flex items-center justify-center px-3 py-3 rounded-md text-base font-medium mt-4"
               onClick={() => setIsOpen(false)}
             >
               <Mail size={18} className="mr-2" />
