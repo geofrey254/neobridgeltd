@@ -1,7 +1,6 @@
 import { getPayload } from 'payload'
 import React from 'react'
 import HeroBlock from '@/components/homepage/HeroBlock'
-import LogosSection from '@/components/homepage/LogosSection'
 import HeroAboutSection from '@/components/homepage/HeroAbout'
 import HomeServicesSection from '@/components/homepage/ServicesSection'
 import WhyBlock from '@/components/homepage/WhyBlock'
@@ -39,8 +38,6 @@ function renderBlock(block: any, index: number) {
   switch (block.blockType) {
     case 'hero':
       return <HeroBlock key={index} block={block} />
-    case 'logos-section':
-      return <LogosSection key={index} block={block} />
     case 'hero-about':
       return <HeroAboutSection key={index} block={block} />
     case 'services-block':

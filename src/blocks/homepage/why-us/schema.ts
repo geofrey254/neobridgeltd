@@ -18,29 +18,7 @@ export const WhyChooseUs: Block = {
       type: 'textarea',
       required: true,
     },
-    {
-      name: 'listings',
-      label: 'Choose Us Listings',
-      type: 'array',
-      minRows: 1,
-      maxRows: 10,
-      fields: [
-        {
-          name: 'title',
-          label: 'Listing Title',
-          type: 'text',
-          required: true,
-        },
-        {
-          name: 'content',
-          label: 'Listing Content',
-          type: 'textarea',
-          required: true,
-        },
-      ],
-    },
-    { name: 'experience', label: 'Years of Experience', type: 'number', required: true },
-    { name: 'clients', label: 'Number of Happy Clients', type: 'number', required: true },
+
     {
       name: 'why_us_photo',
       label: 'Section Photo',

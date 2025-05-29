@@ -100,7 +100,7 @@ export default function HeroAboutSection({ block }: AboutUsBlockProps) {
 
       <div className="relative z-10 xl:container mx-auto px-4 md:px-16 xl:px-4">
         <motion.div
-          className="flex flex-col lg:flex-row gap-16 items-center"
+          className="flex flex-col lg:flex-row md:gap-16 items-center"
           variants={staggerContainer}
           initial="hidden"
           animate={controls}
@@ -159,7 +159,10 @@ export default function HeroAboutSection({ block }: AboutUsBlockProps) {
           <motion.div variants={fadeInRight} className="lg:w-9/12">
             <div className="flex flex-col max-w-2xl">
               {/* Section Label */}
-              <motion.div className="inline-flex items-center gap-3 mb-6" variants={scaleIn}>
+              <motion.div
+                className="inline-flex items-center gap-3 mt-12 md:mt-0 mb-6"
+                variants={scaleIn}
+              >
                 <div className="w-12 h-1 bg-[#df0c0c] rounded-full"></div>
                 <span className="text-[#df0c0c] font-bold text-sm tracking-wider uppercase">
                   About Neobridge
@@ -180,7 +183,7 @@ export default function HeroAboutSection({ block }: AboutUsBlockProps) {
                 className="text-[#041740]/70 space-y-6 mb-10 text-lg leading-relaxed"
                 variants={fadeInUp}
               >
-                <p>{description}</p>
+                <p className="text-justify">{description}</p>
               </motion.div>
 
               {/* Stats Cards */}

@@ -7,10 +7,10 @@ export const OurSolutions: Block = {
   },
   fields: [
     {
-      name: 'solutions',
-      label: 'Our Solutions',
+      name: 'services',
+      label: 'Our Services',
       type: 'relationship',
-      relationTo: 'our-solutions',
+      relationTo: 'ourservices',
       hasMany: true,
     },
   ],

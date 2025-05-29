@@ -1,27 +1,18 @@
-import { CollectionConfig } from 'payload'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
+import { CollectionConfig } from 'payload'
 import slugify from 'slugify'
 
-const CaseStudy: CollectionConfig = {
-  slug: 'casestudies',
-  labels: {
-    singular: 'Case Study',
-    plural: 'Case Studies',
-  },
+export const Services: CollectionConfig = {
+  slug: 'ourservices',
   admin: {
     useAsTitle: 'title',
-    defaultColumns: ['title', 'publishedDate'],
-    group: 'Content',
-  },
-  access: {
-    read: () => true,
-  },
-  versions: {
-    drafts: true,
+    description: 'Add Service',
+    group: 'Services',
   },
   fields: [
     {
       name: 'title',
+      label: 'Title',
       type: 'text',
       required: true,
     },
@@ -44,19 +35,14 @@ const CaseStudy: CollectionConfig = {
         ],
       },
     },
-
     {
-      name: 'coverImage',
-      type: 'upload',
-      relationTo: 'media',
-    },
-    {
-      name: 'content',
+      name: 'description',
+      label: 'Description',
       type: 'richText',
-      required: true,
       editor: lexicalEditor(),
+      required: true,
     },
   ],
 }
 
-export default CaseStudy
+export default Services

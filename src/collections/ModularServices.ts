@@ -1,26 +1,17 @@
 import { CollectionConfig } from 'payload'
 import slugify from 'slugify'
 
-const Resources: CollectionConfig = {
-  slug: 'resources',
-  labels: {
-    singular: 'Resource',
-    plural: 'Resources',
-  },
+export const ModularServices: CollectionConfig = {
+  slug: 'modularservices',
   admin: {
     useAsTitle: 'title',
-    defaultColumns: ['title', 'publishedDate'],
-    group: 'Content',
-  },
-  access: {
-    read: () => true,
-  },
-  versions: {
-    drafts: true,
+    description: 'Add Service',
+    group: 'Services',
   },
   fields: [
     {
       name: 'title',
+      label: 'Title',
       type: 'text',
       required: true,
     },
@@ -45,16 +36,11 @@ const Resources: CollectionConfig = {
     },
     {
       name: 'description',
+      label: 'Description',
       type: 'textarea',
-      required: true,
-    },
-    {
-      name: 'document',
-      type: 'upload',
-      relationTo: 'media',
       required: true,
     },
   ],
 }
 
-export default Resources
+export default ModularServices

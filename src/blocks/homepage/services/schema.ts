@@ -14,10 +14,12 @@ export const ServicesBlock: Block = {
     },
 
     {
-      name: 'solutions',
-      label: 'Our Solutions',
+      name: 'services',
+      label: 'Our Services',
       type: 'relationship',
-      relationTo: 'our-solutions',
+      minRows: 1,
+      maxRows: 4,
+      relationTo: 'ourservices',
       hasMany: true,
     },
   ],
