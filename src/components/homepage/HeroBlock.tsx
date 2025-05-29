@@ -157,7 +157,7 @@ export default function HeroBlock({ block }: HeroBlockProps) {
             >
               <Link
                 href="/solutions"
-                className="bg-[#DF0C0C] hover:bg-[#deeaaa] text-white px-6 py-3 rounded-md shadow-sm flex items-center justify-center group transition-all duration-300 w-full sm:w-auto"
+                className="bg-[#DF0C0C] hover:bg-[#df0c0c] text-white px-6 py-3 rounded-md shadow-sm flex items-center justify-center group transition-all duration-300 w-full sm:w-auto"
               >
                 Explore Solutions
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />

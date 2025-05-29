@@ -6,6 +6,9 @@ import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
 import { s3Storage } from '@payloadcms/storage-s3'
+import { formBuilderPlugin } from '@payloadcms/plugin-form-builder'
+import { nodemailerAdapter } from '@payloadcms/email-nodemailer'
+import nodemailer from 'nodemailer'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
@@ -39,6 +42,18 @@ export default buildConfig({
     },
   }),
   sharp,
+  email: nodemailerAdapter({
+    defaultFromAddress: `${process.env.EMAIL_USER}`,
+    defaultFromName: 'LilanKichwenKadima',
+    transport: await nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT),
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    }),
+  }),
   plugins: [
     s3Storage({
       collections: {
@@ -55,6 +70,27 @@ export default buildConfig({
         },
         region: process.env.S3_REGION,
         endpoint: process.env.S3_ENDPOINT,
+      },
+    }),
+    formBuilderPlugin({
+      fields: {
+        text: true,
+        textarea: true,
+        email: true,
+        number: true,
+        payment: false,
+      },
+      redirectRelationships: ['pages'],
+      defaultToEmail: 'email.developer.backend@gmail.com',
+      formOverrides: {
+        admin: {
+          group: 'Forms',
+        },
+      },
+      formSubmissionOverrides: {
+        admin: {
+          group: 'Forms',
+        },
       },
     }),
   ],

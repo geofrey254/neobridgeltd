@@ -77,7 +77,7 @@ export default function TeamSection({ block }: TeamBlockProps) {
   return (
     <section
       ref={ref}
-      className="py-16 md:py-12 relative overflow-hidden bg-gradient-to-b from-white via-white to-[#deeaaa]/30"
+      className="py-16 md:py-12 relative overflow-hidden bg-gradient-to-b from-white via-white to-[#df0c0c]/30"
     >
       {/* Abstract decorative elements with new color scheme */}
       <div className="absolute top-20 right-10 w-64 h-64 md:w-96 md:h-96 rounded-full bg-[#7aa4c3]/20 blur-3xl" />
@@ -160,7 +160,7 @@ export default function TeamSection({ block }: TeamBlockProps) {
                           {/* Name and role overlay */}
                           <div className="absolute inset-x-0 bottom-0 p-4 text-white z-20 flex flex-col items-center">
                             <h3 className="text-xl md:text-2xl font-bold">{member.name}</h3>
-                            <p className="text-base font-medium text-[#deeaaa] mb-1">
+                            <p className="text-base font-medium text-[#df0c0c] mb-1">
                               {member.role}
                             </p>
 
@@ -187,7 +187,7 @@ export default function TeamSection({ block }: TeamBlockProps) {
                             <div className="absolute bottom-4 left-4 w-12 h-12 opacity-20">
                               <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                                 <path
-                                  fill="#deeaaa"
+                                  fill="#df0c0c"
                                   d="M50 0 L93.3 25 L93.3 75 L50 100 L6.7 75 L6.7 25 Z"
                                 ></path>
                               </svg>

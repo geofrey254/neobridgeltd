@@ -223,11 +223,11 @@ export default function HeroAboutSection({ block }: AboutUsBlockProps) {
               {/* Call to Action */}
               <motion.div variants={fadeInUp}>
                 <Link
-                  href="/about"
+                  href="/who-we-are"
                   className="group inline-flex items-center gap-4 bg-gradient-to-r from-[#041740] to-[#041740]/90 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
                   <Target size={20} />
-                  Discover Our Story
+                  Discover More
                   <ChevronRight
                     size={20}
                     className="group-hover:translate-x-2 transition-transform duration-300"

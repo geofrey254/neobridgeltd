@@ -86,7 +86,7 @@ const Footer = () => {
               />
             </div>
             <p className="text-gray-300 mb-8 text-lg leading-relaxed">
-              Transforming data into actionable insights for your business growth and success.
+              Turning market intelligence into strategic advantage for your growth.
             </p>
             <div className="space-y-4">
               <div className="flex items-center group">
@@ -94,7 +94,7 @@ const Footer = () => {
                   <Phone className="h-5 w-5 text-white" />
                 </div>
                 <p className="text-gray-300 group-hover:text-white transition-colors">
-                  +254 720 206088
+                  +254 713 297772
                 </p>
               </div>
               <div className="flex items-center group">
@@ -102,7 +102,7 @@ const Footer = () => {
                   <Mail className="h-5 w-5 text-white" />
                 </div>
                 <p className="text-gray-300 group-hover:text-white transition-colors">
-                  info@vividanalytics.com
+                  service@neobridgeltd.com
                 </p>
               </div>
             </div>
@@ -116,9 +116,9 @@ const Footer = () => {
             </h3>
             <ul className="grid grid-cols-2 gap-4 mt-2">
               {[
-                { href: '/solutions', label: 'Solutions' },
-                { href: '/about-us', label: 'About Us' },
-                { href: '/blog', label: 'Blog' },
+                { href: '/who-we-are', label: 'About Us' },
+                { href: '/what-we-offer', label: 'What We Offer' },
+                { href: '/modular-services', label: 'Modular Services' },
                 { href: '/contact-us', label: 'Contact Us' },
               ].map((link, index) => (
                 <li key={index}>

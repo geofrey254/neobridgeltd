@@ -4,8 +4,9 @@ import Navbar from '@/components/navigation/Navbar'
 import Footer from '@/components/navigation/Footer'
 
 export const metadata = {
-  description: 'A blank template using Payload in a Next.js app.',
-  title: 'Payload Blank Template',
+  title: 'Neobridge | Strategic Financial Advisory for Africa',
+  description:
+    'Neobridge is a hands-on advisory firm helping entrepreneurs and investors unlock growth, raise capital, and navigate M&A across key sectors in Africa.',
 }
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
