@@ -116,7 +116,7 @@ export default function WhyBlock({ block }: WhyBlockProps) {
 
             {/* Description */}
             <motion.p
-              className="text-gray-600 text-base md:text-lg leading-relaxed mb-4 md:mb-10 md:text-justify"
+              className="text-gray-600 text-lg leading-relaxed mb-4 md:mb-10 md:text-justify"
               variants={fadeInUp}
             >
               {description}

@@ -179,11 +179,8 @@ export default function HeroAboutSection({ block }: AboutUsBlockProps) {
               </motion.h2>
 
               {/* Description */}
-              <motion.div
-                className="text-[#041740]/70 space-y-6 mb-10 text-base md:text-lg"
-                variants={fadeInUp}
-              >
-                <p className="md:text-justify">{description}</p>
+              <motion.div className="text-[#041740]/70 space-y-6 mb-10 text-lg" variants={fadeInUp}>
+                <p className="leading-relaxed md:text-justify">{description}</p>
               </motion.div>
 
               {/* Stats Cards */}
