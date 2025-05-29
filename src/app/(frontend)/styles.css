@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -114,7 +116,425 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Base styling for rich text container */
+.richtext {
+  color: #374151;
+  font-family: system-ui, -apple-system, "Segoe UI", "Roboto", sans-serif;
+  line-height: 1.8;
+  max-width: 100%;
+  font-size: 1.125rem;
+  letter-spacing: 0.025em;
+}
+
+/* Headings with modern styling */
+.richtext h1 {
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 800;
+  color: #041740;
+  margin: 2.5rem 0 1.5rem;
+  line-height: 1.1;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.richtext h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #df0c0c, #041740);
+  border-radius: 2px;
+}
+
+.richtext h2 {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 700;
+  color: #041740;
+  margin: 2rem 0 1.25rem;
+  line-height: 1.2;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.richtext h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 4px;
+  height: calc(100% - 1rem);
+  background: linear-gradient(180deg, #df0c0c, #041740);
+  border-radius: 2px;
+}
+
+.richtext h3 {
+  font-size: clamp(1.375rem, 3vw, 1.75rem);
+  font-weight: 600;
+  color: #041740;
+  margin: 1.75rem 0 1rem;
+  line-height: 1.3;
+  position: relative;
+}
+
+.richtext h3::before {
+  content: '▸';
+  color: #df0c0c;
+  font-weight: bold;
+  margin-right: 0.5rem;
+  font-size: 0.8em;
+}
+
+.richtext h4 {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+  color: #041740;
+  margin: 1.5rem 0 0.75rem;
+  line-height: 1.4;
+  text-decoration: underline;
+}
+
+/* Enhanced paragraphs */
+.richtext p {
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  text-align: justify;
+}
+
+.richtext p:first-of-type {
+  font-size: 1.25rem;
+  color: #374151;
+}
+
+
+
+/* Modern link styling */
+.richtext a {
+  color: #041740;
+  text-decoration: none;
+  position: relative;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.richtext a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(90deg, #df0c0c, #041740);
+  transition: width 0.3s ease;
+}
+
+.richtext a:hover::after {
+  width: 100%;
+}
+
+.richtext a:hover {
+  color: #df0c0c;
+}
+
+/* Custom list styling */
+.richtext ul,
+ol {
+  list-style: none;
+  margin: 1.5rem 0;
+  padding-left: 0;
+}
+
+
+.richtext ul li {
+  position: relative;
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+  line-height: 1.7;
+}
+
+
+.richtext ol {
+  list-style: none;
+  margin: 1.5rem 0;
+  padding-left: 0;
+}
+
+.richtext ol li {
+  margin-bottom: 1rem;
+  padding-left: 2.5rem;
+  position: relative;
+  line-height: 1.7;
+  font-size: 2rem;
+}
+
+/* Enhanced blockquotes */
+.richtext blockquote {
+  margin: 2rem 0;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, rgba(4, 23, 64, 0.05), rgba(223, 12, 12, 0.05));
+  border-left: 5px solid #df0c0c;
+  border-radius: 0 12px 12px 0;
+  font-style: italic;
+  color: #374151;
+  position: relative;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.richtext blockquote::before {
+  content: '"';
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  font-size: 3rem;
+  color: #df0c0c;
+  font-family: serif;
+  line-height: 1;
+}
+
+.richtext blockquote p {
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.richtext blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* Modern code styling */
+.richtext pre {
+  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+  border-radius: 12px;
+  padding: 1.5rem;
+  overflow-x: auto;
+  margin: 2rem 0;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.richtext pre::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #041740, #df0c0c);
+  border-radius: 12px 12px 0 0;
+}
+
+.richtext code {
+  font-family: "Fira Code", "Courier New", monospace;
+  font-size: 0.9em;
+  padding: 0.25em 0.5em;
+  background: linear-gradient(135deg, rgba(4, 23, 64, 0.1), rgba(223, 12, 12, 0.1));
+  border-radius: 6px;
+  color: #041740;
+  font-weight: 500;
+}
+
+/* Enhanced tables */
+.richtext table {
+  width: 100%;
+  margin: 2rem 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.richtext table th {
+  background: linear-gradient(135deg, #041740, #df0c0c);
+  color: white;
+  font-weight: 600;
+  text-align: left;
+  padding: 1rem;
+  font-size: 1.1rem;
+}
+
+.richtext table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.2s ease;
+}
+
+.richtext table tr:nth-child(even) {
+  background-color: rgba(4, 23, 64, 0.02);
+}
+
+.richtext table tr:hover {
+  background-color: rgba(4, 23, 64, 0.05);
+}
+
+/* Enhanced images */
+.richtext img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 2rem auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.richtext img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+}
+
+/* Figure and caption styling */
+.richtext figure {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.richtext figcaption {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: 1rem;
+  font-style: italic;
+  padding: 0.5rem 1rem;
+  background: rgba(4, 23, 64, 0.05);
+  border-radius: 8px;
+  display: inline-block;
+}
+
+/* Modern horizontal rule */
+.richtext hr {
+  border: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #041740, #df0c0c, #041740, transparent);
+  margin: 3rem 0;
+  border-radius: 2px;
+}
+
+/* Strong and emphasis */
+.richtext strong {
+  font-weight: 700;
+  color: #041740;
+}
+
+.richtext em {
+  font-style: italic;
+  color: #4b5563;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .richtext {
+    padding: 0 0.5rem;
+    font-size: 1rem;
+  }
+
+  .richtext h1 {
+    margin: 2rem 0 1rem;
+  }
+
+  .richtext h2 {
+    margin: 1.5rem 0 1rem;
+    padding-left: 0.75rem;
+  }
+
+  .richtext p:first-of-type::first-letter {
+    font-size: 3rem;
+    line-height: 2.5rem;
+  }
+
+  .richtext blockquote {
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .richtext pre {
+    padding: 1rem;
+  }
+
+  .richtext table th,
+  .richtext table td {
+    padding: 0.75rem 0.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+
+  .richtext ul li,
+  .richtext ol li {
+    padding-left: 1.5rem;
+  }
+
+  .richtext ol li::before {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Video embeds with modern styling */
+.richtext .video-embed {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  margin: 2rem 0;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.richtext .video-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+/* Smooth scrolling for anchor links */
+.richtext {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+.richtext a:focus {
+  outline: 2px solid #df0c0c;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Print styles */
+@media print {
+  .richtext {
+    color: #000;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  .richtext h1,
+  .richtext h2,
+  .richtext h3,
+  .richtext h4 {
+    color: #000;
+    page-break-after: avoid;
+  }
+
+  .richtext img {
+    max-width: 100%;
+    box-shadow: none;
+  }
+
+  .richtext blockquote {
+    box-shadow: none;
+    border: 1px solid #ccc;
   }
 }

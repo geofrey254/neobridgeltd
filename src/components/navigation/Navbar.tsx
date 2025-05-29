@@ -58,31 +58,35 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-6">
             <Link
               href="/"
-              className="text-[#041740] hover:text-slate-900 flex items-center space-x-1"
+              className="text-[#041740] hover:text-slate-900 flex items-center space-x-1 font-medium"
             >
-              <Home size={18} />
               <span>Home</span>
             </Link>
 
             <Link
-              href="/about-us"
-              className="text-[#041740] hover:text-slate-900 flex items-center space-x-1"
+              href="/who-we-are"
+              className="text-[#041740] hover:text-slate-900 flex items-center space-x-1 font-medium"
             >
-              <Info size={18} />
-              <span>About Us</span>
+              <span>Who We Are</span>
+            </Link>
+
+            <Link
+              href="/what-we-offer"
+              className="text-[#041740] hover:text-slate-900 flex items-center space-x-1 font-medium"
+            >
+              <span>What We Offer</span>
             </Link>
 
             <Link
               href="/our-solutions"
-              className="text-[#041740] hover:text-slate-900 flex items-center space-x-1"
+              className="text-[#041740] hover:text-slate-900 flex items-center space-x-1 font-medium"
             >
-              <Puzzle size={18} />
-              <span>Solutions</span>
+              <span>Modular Services</span>
             </Link>
 
             <Link
               href="/contact-us"
-              className="bg-[#041740] text-white px-4 py-2 rounded-md hover:bg-opacity-90 transition-all"
+              className="bg-[#041740] text-white px-4 py-2 rounded-md hover:bg-opacity-90 transition-all font-medium"
             >
               Contact Us
             </Link>
@@ -146,7 +150,7 @@ const Navbar = () => {
               </button>
 
               {mobileInsightsOpen && (
-                <div className="bg-gray-50 rounded-md mt-1 ml-6 border-l-2 border-[#041740]">
+                <div className="bg-gray-50 rounded-md mt-1 font-medium ml-6 border-l-2 border-[#041740]">
                   <Link
                     href="/insights/resources"
                     className="text-[#041740] hover:bg-gray-100 px-4 py-3 rounded-md text-base flex items-center"

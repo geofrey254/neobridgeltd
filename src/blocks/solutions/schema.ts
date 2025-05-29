@@ -1,9 +1,13 @@
 import { Block } from 'payload'
 
 export const OurSolutions: Block = {
-  slug: 'solutionblock',
+  slug: 'servicesblock',
+  labels: {
+    singular: 'Services Block',
+    plural: 'Services Blocks',
+  },
   admin: {
-    group: 'Solutions Page',
+    group: 'What We Offer Page',
   },
   fields: [
     {

@@ -243,7 +243,7 @@ export interface Page {
             services?: (number | Ourservice)[] | null;
             id?: string | null;
             blockName?: string | null;
-            blockType: 'solutionblock';
+            blockType: 'servicesblock';
           }
         | {
             heading: string;
@@ -568,7 +568,7 @@ export interface PagesSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
-        solutionblock?:
+        servicesblock?:
           | T
           | {
               services?: T;

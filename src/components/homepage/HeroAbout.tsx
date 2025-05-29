@@ -157,7 +157,7 @@ export default function HeroAboutSection({ block }: AboutUsBlockProps) {
 
           {/* Content Column */}
           <motion.div variants={fadeInRight} className="lg:w-9/12">
-            <div className="flex flex-col max-w-2xl">
+            <div className="flex flex-col max-w-2xl 2xl:max-w-4xl">
               {/* Section Label */}
               <motion.div
                 className="inline-flex items-center gap-3 mt-12 md:mt-0 mb-6"
