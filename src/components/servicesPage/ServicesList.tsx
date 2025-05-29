@@ -1,4 +1,3 @@
-import { Target } from 'lucide-react'
 import React from 'react'
 
 interface ServicesBlockProps {

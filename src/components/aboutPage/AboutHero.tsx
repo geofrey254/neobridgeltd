@@ -1,5 +1,4 @@
 import React from 'react'
-import { ArrowDown, Target, Users, TrendingUp } from 'lucide-react'
 
 export default function AboutHero() {
   return (

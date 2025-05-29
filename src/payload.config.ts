@@ -31,7 +31,8 @@ export default buildConfig({
   },
   collections: [Users, Media, Blog, Pages, Services, ModularServices, Team, Newsletter],
   editor: lexicalEditor(),
-  serverURL: 'http://localhost:3000',
+  serverURL: process.env.NEXT_PUBLIC_PAYLOAD_URL,
+  // serverURL: 'http://localhost:3000',
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
