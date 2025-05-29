@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect } from 'react'
-import { PhoneCall, Scale, BookOpen, ArrowRight, BarChart2, PieChart, Send } from 'lucide-react'
+import { Send } from 'lucide-react'
 import Link from 'next/link'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'

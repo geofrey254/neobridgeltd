@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Star, TrendingUp, Users } from 'lucide-react'
+import { Star, Users } from 'lucide-react'
 
 interface WhyBlockProps {
   block: {

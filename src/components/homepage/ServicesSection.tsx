@@ -1,6 +1,6 @@
 'use client'
-import React, { useState, useEffect } from 'react'
-import { ArrowLeft, ArrowRight, Target, ArrowUpRight } from 'lucide-react'
+import React from 'react'
+import { Target, ArrowUpRight } from 'lucide-react'
 import { RichText } from '@payloadcms/richtext-lexical/react'
 import Link from 'next/link'
 
@@ -18,7 +18,6 @@ interface ServicesBlockProps {
 export default function HomeServicesSection({ block }: ServicesBlockProps) {
   const heading = block?.heading || 'Helping organizations make smarter decisions'
   const solutions = block?.services || []
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null)
 
   return (
     <section className="py-20 bg-[#041740] relative overflow-hidden">
@@ -42,8 +41,6 @@ export default function HomeServicesSection({ block }: ServicesBlockProps) {
             <div
               key={solution.id}
               className="group relative bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border-l-4 border-[#df0c0c] overflow-hidden"
-              onMouseEnter={() => setHoveredCard(solution.id)}
-              onMouseLeave={() => setHoveredCard(null)}
             >
               {/* Card hover effect overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#041740]/5 to-[#df0c0c]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

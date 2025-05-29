@@ -1,5 +1,5 @@
 'use client'
-import { LoaderCircle, Mail, Phone, User, MapPin, Clock, ArrowRight } from 'lucide-react'
+import { LoaderCircle, Mail, Phone, User, ArrowRight } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 

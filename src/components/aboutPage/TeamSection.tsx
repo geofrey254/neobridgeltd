@@ -4,7 +4,7 @@ import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ChevronLeft, ChevronRight, Users } from 'lucide-react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 // Import shadcn carousel components
 import { Carousel, CarouselContent, CarouselItem, CarouselApi } from '@/components/ui/carousel'

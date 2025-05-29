@@ -3,16 +3,7 @@ import React from 'react'
 import config from '@/payload.config'
 import { getPayload } from 'payload'
 import Link from 'next/link'
-import {
-  Phone,
-  Mail,
-  Briefcase,
-  Linkedin,
-  Twitter,
-  Facebook,
-  Instagram,
-  ChevronRight,
-} from 'lucide-react'
+import { Phone, Mail, Briefcase, Linkedin, Twitter, Facebook, Instagram } from 'lucide-react'
 import { fetchAllMembers, fetchRelatedMembers } from '@/lib/ourTeamUtils'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'

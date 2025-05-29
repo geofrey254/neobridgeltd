@@ -4,7 +4,7 @@ import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Users, BarChart2, ChevronRight, TrendingUp, Award, Target } from 'lucide-react'
+import { Users, BarChart2, ChevronRight, Award, Target } from 'lucide-react'
 
 interface AboutUsBlockProps {
   block: {
